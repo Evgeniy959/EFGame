@@ -24,7 +24,8 @@ namespace EFGame.Lib
         }*/
         public void Init()
         {
-            DbContextOptionsBuilder optionsBuilder = null;
+            //DbContextOptionsBuilder optionsBuilder = null;
+            DbContextOptionsBuilder optionsBuilder = new DbContextOptionsBuilder();
             if (!optionsBuilder.IsConfigured)
             {
                 var str = File.ReadAllText("ConnectionString.txt");
