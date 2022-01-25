@@ -1,7 +1,8 @@
 ﻿using EFGame.Model;
 using Microsoft.EntityFrameworkCore;
-//using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using System;
+//using System.Data.Entity;
 using System.IO;
 
 namespace EFGame.Lib
