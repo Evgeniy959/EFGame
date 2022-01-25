@@ -10,28 +10,26 @@ namespace EFGame.Lib
     {
         public DbSet<Game> TabGames { get; set; }
 
-        private DataBase() { }
+        public DataBase() { }
 
         public DataBase(DbContextOptions<DataBase> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
-        public static DataBase Init()
+        /*public static DataBase Init()
         {
-            var builder = new ConfigurationBuilder();
-            builder.SetBasePath(Directory.GetCurrentDirectory());
-            builder.AddJsonFile("connect_to_db_config.json");
-            var connectionString = builder
-                .Build()
-                .GetConnectionString("DefaultConnection");
-
-            var options = new DbContextOptionsBuilder<DataBase>()
-                .UseMySQL(connectionString)
-                .Options;
-
-            return new DataBase(options);
+            
+        }*/
+        public void Init()
+        {
+            DbContextOptionsBuilder optionsBuilder = null;
+            if (!optionsBuilder.IsConfigured)
+            {
+                var str = File.ReadAllText("ConnectionString.txt");
+                optionsBuilder.UseMySQL(str);
+            }
         }
     }
 }
