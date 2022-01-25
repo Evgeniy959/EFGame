@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+EFGame.Lib/connect_to_db_config.json
+EFGame.Lib/ConnectionString.txt
