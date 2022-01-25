@@ -8,28 +8,24 @@ namespace EFGame.Lib
 {
     public sealed class DataBase : DbContext
     {
+        public static string connectionStringFile => "/ConnectionString.txt";
         public DbSet<Game> TabGames { get; set; }
 
-        public DataBase() { }
-
-        public DataBase(DbContextOptions<DataBase> options)
-            : base(options)
+        protected DataBase() { }
+        public DataBase(DbContextOptions<DataBase> options) : base(options)
         {
-            //Database.EnsureCreated();
+            Database.EnsureCreated();
+        }
+        public static DataBase Init()
+        {
+            var options = new DbContextOptionsBuilder<DataBase>().UseMySQL(GetConnectionString(connectionStringFile)).Options;
+            return new DataBase(options);
         }
 
-        /*public static DataBase Init()
+        public static string GetConnectionString(string connectionStringFile)
         {
-            
-        }*/
-        public void Init()
-        {
-            DbContextOptionsBuilder optionsBuilder = null;
-            if (!optionsBuilder.IsConfigured)
-            {
-                var str = File.ReadAllText("ConnectionString.txt");
-                optionsBuilder.UseMySQL(str);
-            }
+            var streamReader = new StreamReader(Directory.GetCurrentDirectory() + connectionStringFile);
+            return streamReader.ReadToEnd();
         }
     }
 }

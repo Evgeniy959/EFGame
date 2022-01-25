@@ -8,9 +8,9 @@ namespace EFGame.TestApp
     {
         static void Main()
         {
-            var db = new DataBase();
-            db.Init();
-            //var db = DataBase.Init();
+            /*var db = new DataBase();
+            db.Init();*/
+            var db = DataBase.Init();
             db.TabGames.Add(new Game
             {
                 Name = "Counter-Strike",
