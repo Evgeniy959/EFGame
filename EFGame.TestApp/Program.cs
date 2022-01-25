@@ -26,7 +26,6 @@ namespace EFGame.TestApp
                 Style = "Стратегия в реальном времени",
                 DateOfRelease = "23.11.1994"
             });
-
             db.SaveChanges();
         }
     }
