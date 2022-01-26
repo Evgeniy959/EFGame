@@ -1,6 +1,7 @@
 ﻿using EFGame.Lib;
 using EFGame.Model;
 using System;
+using System.Linq;
 
 namespace EFGame.TestApp
 {
@@ -27,6 +28,12 @@ namespace EFGame.TestApp
                 DateOfRelease = "23.11.1994"
             });
             db.SaveChanges();
+            var games = db.TabGames.ToList();
+            Console.WriteLine("Список игр:");
+            foreach (var game in games)
+            {
+                Console.WriteLine($"{game.Id}.{game.Name} - {game.Creator}-{game.Style}-{game.DateOfRelease}");
+            }
         }
     }
 }
