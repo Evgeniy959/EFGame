@@ -8,9 +8,14 @@ namespace EFGame.TestApp
     {
         static void Main()
         {
-            /*var db = new DataBase();
-            db.Init();*/
             var db = DataBase.Init();
+            db.TabGames.Add(new Game
+            {
+                Name = "Genshin Impact",
+                Creator = "MiHoYo",
+                Style = "action-adventure с открытым миром и элементами RPG",
+                DateOfRelease = "13.01.2020"
+            });
             db.TabGames.Add(new Game
             {
                 Name = "Counter-Strike",

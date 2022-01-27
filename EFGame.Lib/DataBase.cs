@@ -11,8 +11,8 @@ namespace EFGame.Lib
         public static string connectionStringFile => "/ConnectionString.txt";
         public DbSet<Game> TabGames { get; set; }
 
-        //protected DataBase() { }
-        public DataBase() { }
+        protected DataBase() { }
+        //public DataBase() { }
         public DataBase(DbContextOptions<DataBase> options) : base(options)
         {
             Database.EnsureCreated();
