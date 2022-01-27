@@ -12,6 +12,13 @@ namespace EFGame.TestApp
             var db = DataBase.Init();
             db.TabGames.Add(new Game
             {
+                Name = "Genshin Impact",
+                Creator = "Blizzard Entertainment",
+                Style = "action-adventure с открытым миром и элементами RPG",
+                DateOfRelease = "13.01.2020"
+            });
+            db.TabGames.Add(new Game
+            {
                 Name = "Counter-Strike",
                 Creator = "Valve Corporation",
                 Style = "Шутер от первого лица",
