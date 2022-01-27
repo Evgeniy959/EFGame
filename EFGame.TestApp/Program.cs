@@ -24,7 +24,6 @@ namespace EFGame.TestApp
                 Style = "Шутер от первого лица",
                 DateOfRelease = "08.11.2000"
             });
-
             db.TabGames.Add(new Game
             {
                 Name = "Warcraft: Orcs & Humans",
