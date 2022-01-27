@@ -13,7 +13,7 @@ namespace EFGame.TestApp
             db.TabGames.Add(new Game
             {
                 Name = "Genshin Impact",
-                Creator = "Blizzard Entertainment",
+                Creator = "MiHoYo",
                 Style = "action-adventure с открытым миром и элементами RPG",
                 DateOfRelease = "13.01.2020"
             });
