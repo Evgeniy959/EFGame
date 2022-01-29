@@ -19,18 +19,10 @@ namespace EFGame.TestApp
             });
             db.TabGames.Add(new Game
             {
-                Name = "Counter-Strike",
-                Creator = "Valve Corporation",
-                Style = "Шутер от первого лица",
-                DateOfRelease = "08.11.2000"
-            });
-
-            db.TabGames.Add(new Game
-            {
-                Name = "Warcraft: Orcs & Humans",
-                Creator = "Blizzard Entertainment",
-                Style = "Стратегия в реальном времени",
-                DateOfRelease = "23.11.1994"
+                Name = "GTA 5",
+                Creator = "Rockstar North",
+                Style = "Action-adventure, или приключенческий боевик",
+                DateOfRelease = "17.09.2013"
             });
             db.SaveChanges();
             var games = db.TabGames.ToList();
